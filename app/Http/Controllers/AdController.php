@@ -27,7 +27,7 @@ class AdController extends Controller
                  "image1"=>"mimes:jpeg,jpg,png",
                  "image2"=>"mimes:jpeg,jpg,png",
                  "image3"=>"mimes:jpeg,jpg,png",
-                 "category"=> "required"
+                 "category_id"=> "required"
             ]
             );
 
@@ -58,7 +58,7 @@ class AdController extends Controller
                 "category_id"=> $request->category_id
             ]);
 
-            return redirect()->route('ads.showAdForm')->with('success', 'Ad created successfully!');
+            return redirect()->route('welcome')->with('success', 'Ad created successfully!');
         }
 
         

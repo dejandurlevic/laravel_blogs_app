@@ -47,7 +47,7 @@
                 <label class="block mt-4 mb-2 text-gray-700 font-medium" for="image">Upload Image:</label>
                 <input type="file" id="image3" name="image3" class="w-full px-4 py-2 border rounded-lg focus:ring focus:ring-indigo-300 focus:outline-none" accept="image/*">
 
-                <select id="category" name="category_id" class="w-full px-4 py-2 border rounded-lg bg-white focus:ring focus:ring-indigo-300 focus:outline-none" required>
+                <select id="category_id" name="category_id" class="w-full px-4 py-2 border rounded-lg bg-white focus:ring focus:ring-indigo-300 focus:outline-none" required>
                     <option value="" disabled selected>Select a category</option>
                     @foreach($categories as $category)
                         <option value="{{ $category->id }}">{{ $category->name }}</option>
