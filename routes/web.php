@@ -1,0 +1,34 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/add-deposit', [App\Http\Controllers\HomeController::class, 'addDeposit'])->name('home.addDeposit');
+Route::post('/add-deposit', [App\Http\Controllers\HomeController::class, 'updateDeposit'])->name('home.addDeposit');
+
+Route::get('/show-ad-form', [App\Http\Controllers\AdController::class, 'showAdForm'])->name('ads.showAdForm');
+Route::post('/show-ad-form', [App\Http\Controllers\AdController::class, 'showAdNewForm'])->name('ads.storeAd');
+
+
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('welcome');
+    })->name('welcome');
+});
+
+Route::get('/terms-of-service', function () {
+    return view('terms'); // Povezivanje sa odgovarajućim Blade fajlom
+})->name('terms.show');
+
+
+Route::get('/policy-of-service', function () {
+    return view('policy'); // Povezivanje sa odgovarajućim Blade fajlom
+})->name('policy.show');
