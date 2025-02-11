@@ -61,5 +61,16 @@ class AdController extends Controller
             return redirect()->route('welcome')->with('success', 'Ad created successfully!');
         }
 
+        public function showAllAds(){
+            $allAds = Ad::all();
+            return view('ads.showAllAds', ["allAds"=>$allAds]);
+        }
+
+
+        public function showSingleAd($id){
+            $single_ad = Ad::find($id);
+
+            return view('ads.singleAd', ["singleAd"=>$single_ad]);
+        }
         
 }

@@ -12,6 +12,9 @@ Route::post('/add-deposit', [App\Http\Controllers\HomeController::class, 'update
 Route::get('/show-ad-form', [App\Http\Controllers\AdController::class, 'showAdForm'])->name('ads.showAdForm');
 Route::post('/show-ad-form', [App\Http\Controllers\AdController::class, 'showAdNewForm'])->name('ads.storeAd');
 
+Route::get('/show-all-ads', [App\Http\Controllers\AdController::class, 'showAllAds'])->name('ads.showAllAds');
+Route::get('/ad/{id}', [App\Http\Controllers\AdController::class, 'showSingleAd'])->name('ads.showSingleAd');
+
 
 
 Route::middleware([
