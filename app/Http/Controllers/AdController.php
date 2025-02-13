@@ -62,10 +62,18 @@ class AdController extends Controller
         }
 
         public function showAllAds(){
-            $allAds = Ad::all();
+            
+            if(isset(request()->cat)){
+            
+                $allAds = Ad::whereHas('category', function($query){
+                    $query->whereName(request()->cat);
+                })->get();
+            }else{
+                $allAds = Ad::all();
+            }
+         
             return view('ads.showAllAds', ["allAds"=>$allAds]);
         }
-
 
         public function showSingleAd($id){
 
