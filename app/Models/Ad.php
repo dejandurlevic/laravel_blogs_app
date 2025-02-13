@@ -11,4 +11,9 @@ class Ad extends Model
     protected $fillable = [
         'title', 'body', 'price', 'image1', 'image2', 'image3', 'user_id', 'category_id'
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

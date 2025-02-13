@@ -42,7 +42,7 @@
         <div class="mt-6 flex justify-between items-center">
             <span class="text-2xl font-bold text-green-600">{{ number_format($singleAd->price, 2) }} EUR</span>
             <button class="bg-blue-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-600 transition">
-                Contact Seller
+                {{ $singleAd->category->name }}
             </button>
         </div>
     </div>

@@ -16,7 +16,6 @@ Route::get('/show-all-ads', [App\Http\Controllers\AdController::class, 'showAllA
 Route::get('/ad/{id}', [App\Http\Controllers\AdController::class, 'showSingleAd'])->name('ads.showSingleAd');
 
 
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

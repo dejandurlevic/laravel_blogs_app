@@ -53,8 +53,7 @@
 
     <!-- Main Content -->
     <main class="flex-1 p-6">
-        <h1 class="text-2xl font-bold text-gray-800">Welcome to Home Page</h1>
-        <p class="text-gray-600 mt-2">Here you can register or login to see blogs.</p>
+        <h1 class="text-2xl font-bold text-gray-800">Welcome to Dashboard</h1>
     </main>
 
 </body>
