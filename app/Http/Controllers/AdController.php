@@ -78,7 +78,9 @@ class AdController extends Controller
         public function showSingleAd($id){
 
             $single_ad = Ad::with('category')->find($id);
-            $single_ad->increment('views');
+            if(auth()->check() && auth()->user()->id !== $single_ad->user_id){
+                $single_ad->increment('views');
+            }
 
             return view('ads.singleAd', ["singleAd"=>$single_ad]);
         }
