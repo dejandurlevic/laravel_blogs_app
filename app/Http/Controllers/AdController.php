@@ -78,6 +78,7 @@ class AdController extends Controller
         public function showSingleAd($id){
 
             $single_ad = Ad::with('category')->find($id);
+            $single_ad->increment('views');
 
             return view('ads.singleAd', ["singleAd"=>$single_ad]);
         }

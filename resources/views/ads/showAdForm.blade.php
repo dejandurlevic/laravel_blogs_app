@@ -8,20 +8,7 @@
 </head>
 <body class="bg-gray-100 flex min-h-screen">
 
-    <!-- Sidebar -->
-    <aside class="w-64 bg-white shadow-lg p-6">
-        <div class="mb-4">
-            <button class="w-full bg-green-500 text-white py-2 px-4 rounded-lg font-semibold">
-                Deposit: {{ (Auth::user()->deposit) ? Auth::user()->deposit : 0}} RSD
-            </button>
-        </div>
-        <nav class="space-y-2">
-            <a href="#" class="block py-2 px-4 bg-gray-200 rounded-lg text-gray-800 hover:bg-gray-300">All Ads</a>
-            <a href="#" class="block py-2 px-4 bg-gray-300 rounded-lg text-gray-900 font-semibold">Add Deposit</a>
-            <a href="#" class="block py-2 px-4 bg-gray-200 rounded-lg text-gray-800 hover:bg-gray-300">Messages</a>
-            <a href="#" class="block py-2 px-4 bg-gray-200 rounded-lg text-gray-800 hover:bg-gray-300">New Ad</a>
-        </nav>
-    </aside>
+    @extends('partials.header')
 
     <!-- Main Content -->
     <main class="flex-1 p-6 flex items-center justify-center">
