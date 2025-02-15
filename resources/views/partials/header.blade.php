@@ -13,7 +13,7 @@
         <nav class="space-y-2">
             <a href="{{ route('ads.showAllAds') }}" class="block py-2 px-4 bg-gray-200 rounded-lg text-gray-800 hover:bg-gray-300">All Ads</a>
             <a href="{{ route('home.addDeposit') }}" class="block py-2 px-4 bg-gray-200 rounded-lg text-gray-800 hover:bg-gray-300">Add Deposit</a>
-            <a href="" class="block py-2 px-4 bg-gray-200 rounded-lg text-gray-800 hover:bg-gray-300">Messages</a>
+            <a href="{{ route('home.showMessage') }}" class="block py-2 px-4 bg-gray-200 rounded-lg text-gray-800 hover:bg-gray-300">Messages</a>
             <a href="{{ route('ads.showAdForm') }}" class="block py-2 px-4 bg-gray-200 rounded-lg text-gray-800 hover:bg-gray-300">New Ad</a>
         </nav>
     </div>

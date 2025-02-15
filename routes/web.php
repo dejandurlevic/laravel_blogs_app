@@ -15,6 +15,8 @@ Route::post('/show-ad-form', [App\Http\Controllers\AdController::class, 'showAdN
 Route::get('/show-all-ads', [App\Http\Controllers\AdController::class, 'showAllAds'])->name('ads.showAllAds');
 Route::get('/ad/{id}', [App\Http\Controllers\AdController::class, 'showSingleAd'])->name('ads.showSingleAd');
 
+Route::post('/single-ad/{id}/send-message', [App\Http\Controllers\MessageController::class, 'contactOwner'])->name('home.contactOwner');
+Route::get('/show-message', [App\Http\Controllers\MessageController::class, 'showMessage'])->name('home.showMessage');
 
 Route::middleware([
     'auth:sanctum',

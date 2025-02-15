@@ -41,10 +41,33 @@
         <!-- Ad Price & CTA -->
         <div class="mt-6 flex justify-between items-center">
             <span class="text-2xl font-bold text-green-600">{{ number_format($singleAd->price, 2) }} EUR</span>
-            <a   href="{{ route('ads.showAllAds')}}?cat={{$singleAd->category->name}}" class="bg-blue-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-600 transition">
+            <a href="{{ route('ads.showAllAds')}}?cat={{$singleAd->category->name}}" class="bg-blue-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-600 transition">
                 {{ $singleAd->category->name }}
             </a>
         </div>
+        @if(auth()->check() && auth()->user()->id !== $singleAd->user_id)
+            <!-- Ad Owner & Contact Form -->
+            <div class="mt-8">
+                <h3 class="text-lg font-semibold text-gray-800">Owner</h3>
+                <p class="text-gray-700">{{ $singleAd->user->name }}</p>
+    
+                <h3 class="mt-4 text-lg font-semibold text-gray-800">Send a Message to {{ $singleAd->user->name }}</h3>
+                <form action="{{ route('home.contactOwner', ['id'=> $singleAd->id]) }}" method="POST" class="mt-4">
+                    @csrf
+                    <textarea name="message" rows="4" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Write your message here..."></textarea>
+                    <button type="submit" class="mt-4 bg-green-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-green-600 transition">Send Message</button>
+                </form>
+                @if(@session()->has('msg'))
+                    
+                <div>
+                    {{session()->get('msg')}}
+                </div>
+
+                @endif
+            </div>
+
+        @endif
+    
     </div>
 
 </body>
