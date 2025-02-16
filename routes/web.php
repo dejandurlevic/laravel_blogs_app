@@ -18,6 +18,10 @@ Route::get('/ad/{id}', [App\Http\Controllers\AdController::class, 'showSingleAd'
 Route::post('/single-ad/{id}/send-message', [App\Http\Controllers\MessageController::class, 'contactOwner'])->name('home.contactOwner');
 Route::get('/show-message', [App\Http\Controllers\MessageController::class, 'showMessage'])->name('home.showMessage');
 
+Route::post('/show-message/replay', [App\Http\Controllers\MessageController::class, 'addReplay'])->name('home.addReplay');
+
+
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
